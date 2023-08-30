@@ -38,7 +38,7 @@
                     <script>
                         setTimeout(function(){
                             location.href="<?= site_url('GroupsTable') ?>"
-                        },5000);
+                        },3000);
                     </script>
             </div>
         </div>
