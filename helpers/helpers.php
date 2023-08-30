@@ -1,5 +1,6 @@
 <?php 
-
+use App\Models\User;
+use App\Models\Groups;
 function site_url($route = '')
 {
     // $_ENV['HOST'] = "http://localhost/phonebook/"

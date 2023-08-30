@@ -11,14 +11,14 @@
     <div class="container">
         <div class="row">
             <div class="col m-5 p-5 text-center">
-                <?php if($deleted_count): ?>
+                <?php if($status): ?>
                     <div class="alert alert-success">
-                        <strong>Success! </strong>Group Deleted Successfully...
+                        <b><strong>موفق  ! </strong>گروه مورد نظر با موفقیت پاک شد</b>
                     </div>
                 <?php else: ?>
                     <span class="text-danger"></span>
                     <div class="alert alert-danger">
-                        <strong>Danger!</strong>Group Not Exists...
+                        <b><strong>اخطار !  </strong>این گروه شامل افراد هست,شما باید ابتدا افراد را از این گروه حذف کنید تا بتوانید گروه مورد نظر را حذف کنید</b>
                     </div>
                 <?php endif; ?>
             </div>
@@ -38,7 +38,7 @@
                     <script>
                         setTimeout(function(){
                             location.href="<?= site_url('GroupsTable') ?>"
-                        },1000);
+                        },5000);
                     </script>
             </div>
         </div>

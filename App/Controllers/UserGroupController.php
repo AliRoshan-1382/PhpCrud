@@ -157,6 +157,7 @@ class UserGroupController{
         }
     }
     
+
     public function Groupadd()
     {
         global $request;
@@ -176,8 +177,20 @@ class UserGroupController{
     {
         global $request;
         $id = $request->get_route_param('id');
-        $data['deleted_count'] = $this->groupsModel->delete(["id"=>$id]);
-        view('group.delete-result',$data);    
+
+        $Gname =  $this->groupsModel->get('Gname', ["id"=>$id])[0];
+
+        $count = $this->UserModel->count(["group_name"=>$Gname]);
+        if ($count > 0) {
+            $data['status'] = false;
+            view('group.delete-result',$data);    
+        }
+        else 
+        {
+            $data['status'] = true;
+            $data['deleted_count'] = $this->groupsModel->delete(["id"=>$id]);
+            view('group.delete-result',$data);    
+        }
     }
     
 }
